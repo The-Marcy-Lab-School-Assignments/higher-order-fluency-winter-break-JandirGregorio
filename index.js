@@ -34,10 +34,10 @@ const oddLength = (animals) => {
 };
 
 const longToShort = (animals) => {
-  return [...animals].sort((a, b) => {
-    if (a.length > b.length) {
+  return [...animals].sort((animal1, animal2) => {
+    if (animal1.length > animal2.length) {
       return -1;
-    } else if (a.length < b.length) {
+    } else if (animal1.length < animal2.length) {
       return 1;
     } else {
       return 0;
@@ -66,27 +66,34 @@ const evenNumbers = (numbers) => {
 // Questions 10-15 (using alumni array)
 
 const oddJob = (alumni) => {
-
+  return alumni.filter((alum) => alum.job.trim().length % 2 === 1);
 };
 
 const updateLanguage = (alumni) => {
-
+  return alumni.map((alum) => {
+    if (alum.language === 'JavaScript') {
+      return { ...alum, language: 'ES6' };
+    }
+    return alum;
+  });
 };
 
 const orderedAlumni = (alumni) => {
-
+  return [...alumni].sort((alum1, alum2) => alum2.age - alum1.age);
 };
 
 const averageAge = (alumni) => {
-
+  const sum = alumni.reduce((sum, currAlum) => sum + currAlum.age, 0);
+  const average = Math.round(sum / alumni.length);
+  return average;
 };
 
 const ninetiesBabies = (alumni) => {
-
+  return alumni.filter((alum) => alum.age > 25 && alum.age <= 35);
 };
 
 const allUseJavaScript = (alumni) => {
-
+  return alumni.every((alum) => alum.language === 'JavaScript');
 };
 
 

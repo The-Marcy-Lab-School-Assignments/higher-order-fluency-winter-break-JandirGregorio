@@ -13,9 +13,81 @@ const alumni = [
 
 // Questions 1-7 (using animals array)
 
+const pluralize = (animals) => {
+  return animals.map((animal) => `${animal}s`);
+};
+
+const uppercase = (animals) => {
+  return animals.map((animal) => {
+    const firstLetter = animal[0].toUpperCase();
+    const restOfWord = animal.slice(1);
+    return firstLetter + restOfWord;
+  });
+};
+
+const longWords = (animals) => {
+  return animals.filter((animal) => animal.length > 3);
+};
+
+const oddLength = (animals) => {
+  return animals.filter((animal) => animal.length % 2 === 1);
+};
+
+const longToShort = (animals) => {
+  return [...animals].sort((a, b) => {
+    if (a.length > b.length) {
+      return -1;
+    } else if (a.length < b.length) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+};
+
+const noVowel = (animals) => {
+  return animals.map((animal) => animal.replaceAll(/[aeiou]/gi, 'x'));
+};
+
+const allFour = (animals) => {
+  return animals.every((animal) => animal.length === 4);
+};
+
 // Questions 8-9 (using numbers array)
 
+const sum = (numbers) => {
+
+};
+
+const evenNumbers = (numbers) => {
+
+};
+
 // Questions 10-15 (using alumni array)
+
+const oddJob = (alumni) => {
+
+};
+
+const updateLanguage = (alumni) => {
+
+};
+
+const orderedAlumni = (alumni) => {
+
+};
+
+const averageAge = (alumni) => {
+
+};
+
+const ninetiesBabies = (alumni) => {
+
+};
+
+const allUseJavaScript = (alumni) => {
+
+};
 
 
 // Test the functions

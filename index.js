@@ -13,9 +13,88 @@ const alumni = [
 
 // Questions 1-7 (using animals array)
 
+const pluralize = (animals) => {
+  return animals.map((animal) => `${animal}s`);
+};
+
+const uppercase = (animals) => {
+  return animals.map((animal) => {
+    const firstLetter = animal[0].toUpperCase();
+    const restOfWord = animal.slice(1);
+    return firstLetter + restOfWord;
+  });
+};
+
+const longWords = (animals) => {
+  return animals.filter((animal) => animal.length > 3);
+};
+
+const oddLength = (animals) => {
+  return animals.filter((animal) => animal.length % 2 === 1);
+};
+
+const longToShort = (animals) => {
+  return [...animals].sort((animal1, animal2) => {
+    if (animal1.length > animal2.length) {
+      return -1;
+    } else if (animal1.length < animal2.length) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+};
+
+const noVowel = (animals) => {
+  return animals.map((animal) => animal.replaceAll(/[aeiou]/gi, 'x'));
+};
+
+const allFour = (animals) => {
+  return animals.every((animal) => animal.length === 4);
+};
+
 // Questions 8-9 (using numbers array)
 
+const sum = (numbers) => {
+  return numbers.reduce((sum, currNum) => sum + currNum, 0);
+};
+
+const evenNumbers = (numbers) => {
+  return numbers.filter((number) => number % 2 === 0);
+};
+
 // Questions 10-15 (using alumni array)
+
+const oddJob = (alumni) => {
+  return alumni.filter((alum) => alum.job.trim().length % 2 === 1);
+};
+
+const updateLanguage = (alumni) => {
+  return alumni.map((alum) => {
+    if (alum.language === 'JavaScript') {
+      return { ...alum, language: 'ES6' };
+    }
+    return alum;
+  });
+};
+
+const orderedAlumni = (alumni) => {
+  return [...alumni].sort((alum1, alum2) => alum2.age - alum1.age);
+};
+
+const averageAge = (alumni) => {
+  const sum = alumni.reduce((sum, currAlum) => sum + currAlum.age, 0);
+  const average = Math.round(sum / alumni.length);
+  return average;
+};
+
+const ninetiesBabies = (alumni) => {
+  return alumni.filter((alum) => alum.age > 25 && alum.age <= 35);
+};
+
+const allUseJavaScript = (alumni) => {
+  return alumni.every((alum) => alum.language === 'JavaScript');
+};
 
 
 // Test the functions

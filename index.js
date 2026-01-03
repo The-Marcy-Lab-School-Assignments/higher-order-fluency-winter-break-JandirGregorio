@@ -56,11 +56,11 @@ const allFour = (animals) => {
 // Questions 8-9 (using numbers array)
 
 const sum = (numbers) => {
-
+  return numbers.reduce((sum, currNum) => sum + currNum, 0);
 };
 
 const evenNumbers = (numbers) => {
-
+  return numbers.filter((number) => number % 2 === 0);
 };
 
 // Questions 10-15 (using alumni array)
